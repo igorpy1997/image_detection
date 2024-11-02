@@ -20,8 +20,8 @@ pull:
 .PHONY extract-locales:
 extract-locales:
 	uv run ftl_extract \
-	'.\app\bot' \
-	'.\app\bot\locales' \
+	'.\app\api' \
+	'.\app\api\locales' \
 	-l 'en' \
 	-l 'uk' \
 	-k 'i18n' \
@@ -64,22 +64,3 @@ uv-sync:
 freeze:
 	uv export --quiet --format requirements-txt --no-dev --extra uvloop --output-file requirements.txt
 
-.PHONY create-revision:
-create-revision:
-	cd $(app-dir) && uv run alembic revision --autogenerate -m "$(message)"
-
-.PHONY upgrade-revision:
-upgrade-revision:
-	uv run alembic upgrade "$(revision)"
-
-.PHONY downgrade-revision:
-downgrade-revision:
-	cd $(app-dir) && uv run alembic downgrade "$(revision)"
-
-.PHONY current-revision:
-current-revision:
-	cd $(app-dir) && uv run alembic current
-
-.PHONY create-init-revision:
-create-init-revision:
-	uv run alembic revision --autogenerate -m 'Initial' --rev-id 000000000000
