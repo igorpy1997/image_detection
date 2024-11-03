@@ -1,0 +1,129 @@
+[project]
+name = "Api"
+version = "0.0.1"
+requires-python = "==3.10.*"
+dependencies = [
+    "flask-cors>=5.0.0",
+    "flask-jwt-extended>=4.6.0",
+    "flask-restful>=0.3.10",
+    "flask>=3.0.3",
+    "gunicorn>=23.0.0",
+    "opencv-python-headless>=4.10.0.84",
+    "opencv-python>=4.10.0.84",
+    "python-dotenv>=1.0.1",
+    "torch @ https://download.pytorch.org/whl/cpu/torch-2.5.1%2Bcpu-cp310-cp310-linux_x86_64.whl#sha256=7f91a2200e352745d70e22396bd501448e28350fbdbd8d8b1c83037e25451150 ; sys_platform == 'linux'",
+    "torch @ https://download.pytorch.org/whl/cpu/torch-2.5.1%2Bcpu-cp310-cp310-win_amd64.whl#sha256=df93157482b672892d29134d3fae9d38ba3219702faedd79f407eb36774c56ce ; sys_platform == 'win32'",
+    "torchvision @ https://download.pytorch.org/whl/cpu/torchvision-0.20.1%2Bcpu-cp310-cp310-linux_x86_64.whl#sha256=17bbc073920e429bf23a290472d51edc75e7b9809b81a93503d10d8edb6f3a6d ; sys_platform == 'linux'",
+    "torchvision @ https://download.pytorch.org/whl/cpu/torchvision-0.20.1%2Bcpu-cp310-cp310-win_amd64.whl#sha256=58773dc7110425ff3ffa462ed32d5522deaed81179b24780136ebc493fb94feb ; sys_platform == 'win32'",
+    "types-flask-cors>=5.0.0.20240902",
+    "ultralytics>=8.3.27",
+]
+
+[tool.uv]
+package = false
+
+
+[project.optional-dependencies]
+dev = [
+    "isort==5.13.2",
+    "ruff==0.6.9",
+]
+lint = [
+    "mypy==1.13.0",
+]
+uvloop = [
+]
+
+
+
+[tool.isort]
+py_version = 310
+src_paths = ["api"]
+line_length = 120
+multi_line_output = 3
+force_grid_wrap = 0
+include_trailing_comma = true
+split_on_trailing_comma = false
+single_line_exclusions = ["."]
+sections = ["FUTURE", "STDLIB", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
+skip_gitignore = true
+
+[tool.ruff]
+src = ["api"]
+line-length = 120
+exclude = [
+    ".git",
+    ".mypy_cache",
+    ".ruff_cache",
+    "__pypackages__",
+    "__pycache__",
+    "*.pyi",
+    "venv",
+    ".venv",
+]
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "A003",
+    "ANN002", "ANN003", "ANN101", "ANN102", "ANN401",
+    "C901",
+    "D100", "D101", "D102", "D103", "D104", "D105", "D106", "D107", "D203", "D205", "D212",
+    "ERA001",
+    "FA100", "FA102",
+    "FBT001", "FBT002",
+    "FIX002",
+    "I001",
+    "PLR0911", "PLR0912", "PLR0913", "PLR0915", "PLR5501",
+    "PLW0120",
+    "RUF001",
+    "TD002", "TD003"
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+
+[tool.mypy]
+python_version = "3.10"
+mypy_path = "app"
+
+
+
+allow_redefinition = true
+check_untyped_defs = true
+disallow_any_generics = true
+disallow_incomplete_defs = true
+disallow_untyped_calls = true
+disallow_untyped_defs = true
+extra_checks = true
+follow_imports = "skip"
+follow_imports_for_stubs = false
+ignore_missing_imports = false
+namespace_packages = true
+no_implicit_optional = true
+no_implicit_reexport = true
+pretty = true
+show_absolute_path = true
+show_error_codes = true
+show_error_context = true
+warn_redundant_casts = true
+warn_unused_configs = true
+warn_unused_ignores = true
+
+disable_error_code = [
+    "no-redef",
+]
+
+exclude = [
+    "\\.?venv",
+    "\\.idea",
+    "\\.tests?",
+]
+init_forbid_extra = true
+init_typed = true
+warn_required_dynamic_aliases = true
+

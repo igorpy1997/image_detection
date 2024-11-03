@@ -1,0 +1,7 @@
+app/.idea
+.venv
+.ruff_cache
+.mypy_cache
+*.log
+**/*.py[cod]
+**/__pycache__/
