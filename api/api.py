@@ -6,7 +6,7 @@ from flask_restful import Api
 from flask_cors import CORS
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required
 
-from resources.imageDetection import ImageDetection
+from resources.image_detection import ImageDetection
 
 load_dotenv()
 app = Flask(__name__, static_folder='static')

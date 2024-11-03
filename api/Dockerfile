@@ -1,4 +1,3 @@
-# api/Dockerfile
 FROM python:3.10.12-slim AS builder
 
 ENV PYTHONUNBUFFERED=1 \
@@ -6,7 +5,13 @@ ENV PYTHONUNBUFFERED=1 \
 
 ARG USER_ID=999
 ARG GROUP_ID=999
-ARG USER_NAME=bot
+ARG USER_NAME=api
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    libgl1-mesa-dev \
+    libglib2.0-0
+
 
 WORKDIR /app
 
@@ -21,5 +26,3 @@ RUN --mount=from=ghcr.io/astral-sh/uv,source=/uv,target=/bin/uv \
     uv pip uninstall --system pip wheel
 
 COPY --chown=${USER_NAME}:${USER_NAME} . /app/
-
-ENTRYPOINT ["python", "api.py"]
