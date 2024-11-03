@@ -52,7 +52,5 @@ def login():
 class AuthenticatedImageDetection(ImageDetection):
     decorators = [jwt_required()]
 
-api.add_resource(AuthenticatedImageDetection, '/api/resources/detect')
+api.add_resource(AuthenticatedImageDetection, '/app/resources/detect')
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)

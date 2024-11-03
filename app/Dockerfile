@@ -5,7 +5,7 @@ ENV PYTHONUNBUFFERED=1 \
 
 ARG USER_ID=999
 ARG GROUP_ID=999
-ARG USER_NAME=api
+ARG USER_NAME=app
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
@@ -25,4 +25,4 @@ RUN --mount=from=ghcr.io/astral-sh/uv,source=/uv,target=/bin/uv \
     uv pip install --no-cache --system -r requirements.txt && \
     uv pip uninstall --system pip wheel
 
-COPY --chown=${USER_NAME}:${USER_NAME} . /app/
+COPY --chown=${USER_NAME}:${USER_NAME} .. /app/

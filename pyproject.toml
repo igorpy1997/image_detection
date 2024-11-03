@@ -11,8 +11,11 @@ dependencies = [
     "opencv-python-headless>=4.10.0.84",
     "opencv-python>=4.10.0.84",
     "python-dotenv>=1.0.1",
-    "torch @ https://download.pytorch.org/whl/cpu/torch-2.5.1%2Bcpu-cp310-cp310-linux_x86_64.whl#sha256=7f91a2200e352745d70e22396bd501448e28350fbdbd8d8b1c83037e25451150",
-    "torchvision @ https://download.pytorch.org/whl/cpu/torchvision-0.20.1%2Bcpu-cp310-cp310-linux_x86_64.whl#sha256=17bbc073920e429bf23a290472d51edc75e7b9809b81a93503d10d8edb6f3a6d",
+    "torch @ https://download.pytorch.org/whl/cpu/torch-2.5.1%2Bcpu-cp310-cp310-linux_x86_64.whl#sha256=7f91a2200e352745d70e22396bd501448e28350fbdbd8d8b1c83037e25451150 ; sys_platform == 'linux'",
+    "torch @ https://download.pytorch.org/whl/cpu/torch-2.5.1%2Bcpu-cp310-cp310-win_amd64.whl#sha256=df93157482b672892d29134d3fae9d38ba3219702faedd79f407eb36774c56ce ; sys_platform == 'win32'",
+    "torchvision @ https://download.pytorch.org/whl/cpu/torchvision-0.20.1%2Bcpu-cp310-cp310-linux_x86_64.whl#sha256=17bbc073920e429bf23a290472d51edc75e7b9809b81a93503d10d8edb6f3a6d ; sys_platform == 'linux'",
+    "torchvision @ https://download.pytorch.org/whl/cpu/torchvision-0.20.1%2Bcpu-cp310-cp310-win_amd64.whl#sha256=58773dc7110425ff3ffa462ed32d5522deaed81179b24780136ebc493fb94feb ; sys_platform == 'win32'",
+
     "ultralytics>=8.3.27",
 ]
 

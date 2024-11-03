@@ -2,7 +2,7 @@
 export
 
 app-dir = app
-bot-dir = bot
+
 
 .PHONY help:
 up:
@@ -17,19 +17,6 @@ pull:
 	git pull origin master
 	git submodule update --init --recursive
 
-.PHONY extract-locales:
-extract-locales:
-	uv run ftl_extract \
-	'.\app\api' \
-	'.\app\api\locales' \
-	-l 'en' \
-	-l 'uk' \
-	-k 'i18n' \
-	-k 'L' \
-	-k 'LF' \
-	-k 'LazyProxy' \
-	-a 'core' \
-	--comment-junks
 
 .PHONY lint:
 lint:
@@ -62,5 +49,5 @@ uv-sync:
 
 .PHONY freeze: uv-sync
 freeze:
-	uv export --quiet --format requirements-txt --no-dev --extra uvloop --output-file requirements.txt
+	uv export --quiet --format requirements-txt --no-dev --extra uvloop --output-file app/requirements.txt
 
