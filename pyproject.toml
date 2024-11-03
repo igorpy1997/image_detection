@@ -49,7 +49,7 @@ sections = ["FUTURE", "STDLIB", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
 skip_gitignore = true
 
 [tool.ruff]
-src = ["api"]
+src = ["app"]
 line-length = 120
 exclude = [
     ".git",
