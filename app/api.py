@@ -52,5 +52,5 @@ def login():
 class AuthenticatedImageDetection(ImageDetection):
     decorators = [jwt_required()]
 
-api.add_resource(AuthenticatedImageDetection, '/app/resources/detect')
+api.add_resource(AuthenticatedImageDetection, '/api/resources/detect')
 
