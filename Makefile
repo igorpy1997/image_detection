@@ -1,4 +1,4 @@
-#include .env
+#include .env.example
 export
 
 app-dir = app
@@ -37,7 +37,7 @@ format:
 .PHONE mypy:
 mypy:
 	echo "Running MyPy..."
-	uv run mypy --config-file pyproject.toml --package $(app-dir).$(bot-dir)
+	uv run mypy --config-file pyproject.toml --package $(app-dir)
 
 .PHONY show-outdated:
 show-outdated:

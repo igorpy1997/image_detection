@@ -15,7 +15,7 @@ dependencies = [
     "torch @ https://download.pytorch.org/whl/cpu/torch-2.5.1%2Bcpu-cp310-cp310-win_amd64.whl#sha256=df93157482b672892d29134d3fae9d38ba3219702faedd79f407eb36774c56ce ; sys_platform == 'win32'",
     "torchvision @ https://download.pytorch.org/whl/cpu/torchvision-0.20.1%2Bcpu-cp310-cp310-linux_x86_64.whl#sha256=17bbc073920e429bf23a290472d51edc75e7b9809b81a93503d10d8edb6f3a6d ; sys_platform == 'linux'",
     "torchvision @ https://download.pytorch.org/whl/cpu/torchvision-0.20.1%2Bcpu-cp310-cp310-win_amd64.whl#sha256=58773dc7110425ff3ffa462ed32d5522deaed81179b24780136ebc493fb94feb ; sys_platform == 'win32'",
-
+    "types-flask-cors>=5.0.0.20240902",
     "ultralytics>=8.3.27",
 ]
 
@@ -29,7 +29,7 @@ dev = [
     "ruff==0.6.9",
 ]
 lint = [
-
+    "mypy==1.13.0",
 ]
 uvloop = [
 ]
@@ -86,9 +86,12 @@ indent-style = "space"
 skip-magic-trailing-comma = false
 line-ending = "auto"
 
+
 [tool.mypy]
 python_version = "3.10"
-mypy_path = "api"
+mypy_path = "app"
+
+
 
 allow_redefinition = true
 check_untyped_defs = true
@@ -123,3 +126,4 @@ exclude = [
 init_forbid_extra = true
 init_typed = true
 warn_required_dynamic_aliases = true
+
