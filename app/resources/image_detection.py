@@ -1,7 +1,7 @@
 import base64
 import logging
 from io import BytesIO
-from flask import Response
+
 import cv2
 import numpy as np
 from flask import jsonify, request
@@ -54,7 +54,13 @@ class ImageDetection(Resource):
                         3,
                     )
                     cv2.putText(
-                        image, f"{label} {confidence:.2f}", (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 0), 1
+                        image,
+                        f"{label} {confidence:.2f}",
+                        (x1, y1 - 10),
+                        cv2.FONT_HERSHEY_SIMPLEX,
+                        0.6,
+                        (0, 0, 0),
+                        1,
                     )
 
             buffer = BytesIO()
