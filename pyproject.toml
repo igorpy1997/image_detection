@@ -1,5 +1,5 @@
 [project]
-name = "Api"
+name = "image-detection"
 version = "0.0.1"
 requires-python = "==3.10.*"
 dependencies = [
@@ -38,7 +38,7 @@ uvloop = [
 
 [tool.isort]
 py_version = 310
-src_paths = ["api"]
+src_paths = ["app"]
 line_length = 120
 multi_line_output = 3
 force_grid_wrap = 0
