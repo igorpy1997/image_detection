@@ -5,7 +5,8 @@
 git clone <repository_url>
 cd <repository_directory>
 python3.10 -m venv venv
-source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+source venv/bin/activate  # Linux
+`venv\Scripts\activate` #Windows
 ```
 # 2. Install dependencies:
 ```shell
