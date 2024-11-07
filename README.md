@@ -4,7 +4,8 @@
 ```shell
 git clone <repository_url>
 cd <repository_directory>
-python3.10 -m venv venv
+python3.10 -m venv venv(maybe you before this you need to use sudo apt install python3.10-venv
+ on linux)
 source venv/bin/activate  # Linux
 `venv\Scripts\activate` #Windows
 ```
