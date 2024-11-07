@@ -10,7 +10,7 @@ source venv/bin/activate  # Linux
 ```
 # 2. Install dependencies:
 ```shell
-pip install -r requirements.txt
+pip install -r app/requirements.txt
 ```
 # 3. Rename `.env.example` to `.env`:
 ```shell
