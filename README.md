@@ -28,7 +28,7 @@ SECRET_KEY=your_generated_key
 # 6. Start the application from the root directory (not from the `app` directory):
 ```shell
 cd app
-flask --app app run
+flask --app api run
 ```
 # 7. Open the application in your browser:
 ```shell
